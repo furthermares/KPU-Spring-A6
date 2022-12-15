@@ -1,2 +1,2 @@
 # KPU-Spring-A6
-Spring Boot assignment
+README: JSM_free.pptx
