@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.tukorea.free.mapper.WordMapper">
+  
+  
+ 	<select id="getTime" resultType="string">
+ 		select now()
+ 	</select>
+ 	
+     <insert id="insert"> 
+   		insert into word_free (w_id, l_id, w_title, w_desc, w_extra) values
+ 		(#{w_id}, #{l_id}, #{w_title}, #{w_desc}, #{w_extra})
+     </insert> 
+ 	
+     <select id="selectByid" resultType="org.tukorea.free.domain.WordVO">
+ 		select * from word_free where w_id = #{w_id}
+     </select>
+ 	
+     <select id="selectAll" resultType="org.tukorea.free.domain.WordVO">
+     <![CDATA[
+ 		select * from word_free
+      ]]> 
+     </select>
+ 	
+     <update id="update">
+	 	update word_free set w_id =#{w_id}, l_id =#{l_id}, w_title =#{w_title}, 
+			w_desc =#{w_desc}, w_extra =#{w_extra}
+		 where w_id = #{w_id}
+    </update>
+ 
+    <delete id="delete">
+		delete from word_free where w_id = #{w_id}
+    </delete>
+
+	
+</mapper>  
